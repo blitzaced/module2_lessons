@@ -38,7 +38,7 @@
 """
 
 # Exercise 1
-
+file = open('foods.txt', 'w')
 def write_foods(foods):
     with open('foods.txt', 'w') as file:
         for food in foods:
@@ -71,3 +71,45 @@ def main():
             break
 
 main()
+
+
+# Storing adnd Extracting Data from Lists and Dictionaries
+
+
+""" 
+Storing Lists:
+flowers = ["Wysteria", "Sunflowers", "Orchids", "Marigolds"]
+
+with open('garden.txt', 'w') as file:
+    for flower in flowers:
+    file.write(flower + '\n')
+
+Extracting Lists:
+flowers = []
+
+with open('garden.txt', 'r') as file:
+    for line in file:
+        flowers.append(line.strip())                #The strip() method removes unwanted whitespace and you can loop
+print(flowers)                                       through each line to append the cleaned-up data to your list.
+
+Storing and Extracting Dictionaries:
+clubs = {                                           #Storing
+    'Driver': 'Cobra",
+    'Irons': 'Sirixion',
+    'Hybrid': 'Callaway',
+    'Putter': 'Ping'
+}
+
+with open('golf_bag.txt', 'w')as file:              
+    for club, brand in clubs.items():
+    file.write(f"{club}: {brand}\n")
+
+golf_clubs = {}                                     #Extracting
+
+with open('golf_bag.txt', 'r') as file:
+    for line in file:
+        club, brand = line.strip().split(': ')      #When extracting dictionaries, split(': ') separates each line into key-value pairs
+        golf_clubs[club] = brand                     to be stored in the dictionary.
+print(golf_clubs)
+"""
+
