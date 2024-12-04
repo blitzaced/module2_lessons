@@ -75,3 +75,7 @@ Options
         break
     else:
         print("Invalid option. Please choose 1, 2, 3, or 4.\n")
+
+
+my_list = [10, 20, 30, 40, 50]
+print(len(my_list))

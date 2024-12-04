@@ -1,7 +1,8 @@
 import re
 
 file = open('shows_list.txt', 'w')
-def write_show(shows):                                 #Funtion to write TV shows to a file
+#Funtion to write TV shows to a file
+def write_show(shows):
     with open('shows_list.txt', 'w') as file:
         for show in shows:
             file.write(f"{show['Title']}-:-{show['Platform']}-:-{show['Genre']}\n")
