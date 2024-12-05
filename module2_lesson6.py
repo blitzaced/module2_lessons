@@ -294,3 +294,51 @@ print(person1.greet())                                      # Output: Hellp, my 
 print(person1.have_birthday())                              # Output: Happy Birthday! You are now 26 years old.
 
 
+# Why Use Instance Methods?
+"""
+    Encapsulate Behavior: Methods define what actiones an object can perform, making the code more modular and easier to understand.
+    Maintain State: Since instance methods can access and modify attrubutes, they ebavle objects to keep track of changes in their
+        state over time.
+    Promote Code Reuse: The same methods can be used for multiple objects created from the same class, reducing code duplication.
+"""
+
+# Common Use Cases for Instance Methods
+"""
+    Getters and Setters: Methods used to read or update private attributes. More on this in lesson 7.
+    Performing Actions: Methods that represent behaviors or actions, such as a car driving or a person walking.
+    Calculations Based on Attributes: Methods that compute values using the object's attributes, like calculating the area of a shape.
+"""
+
+
+# Final Challenge
+
+class BankAccount:
+    def __init__(self, account_holder, balance):
+        self.account_holder = account_holder
+        self.balance = balance
+        
+    def deposit(self, amount):                                              # Method to deposit money
+        if amount > 0:
+            self.balance += amount
+            return f"Deposited ${amount}. New balance: ${self.balance}"
+        else:
+            "Deposit amount must be positive."
+            
+    def withdraw(self, amount):                                             # Method to withdraw money
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            return f"Withdrew ${amount}. New balance: $ {self.balance}"
+        else:
+            return "Insufficient funds or invalid amount."
+
+    def get_balance(self):                                                  # Method to check balance
+        return f"Current balance: ${self.balance}"
+
+account = BankAccount("Alice", 100)
+
+print(account.get_balance())                                                # Output: Current balance: $100.00
+print(account.deposit(50))                                                  # Output: Deposited $50.00. New Balance: $150.00
+print(account.withdraw(30))                                                 # Output: Withdrew $30.00. New blanace: $120.00
+print(account.withdraw(200))                                                # Output: Insufficient funds or invalid amount.
+    
+        
